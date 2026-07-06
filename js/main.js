@@ -134,12 +134,23 @@ function render() {
   const pref = C.qg.mapaPreferido || {};
   const prefId = youtubeId(pref.youtube);
   if (prefId) {
+    // facade: só thumbnail + play; o iframe pesado só entra no primeiro toque
     const wrap = el("div", "video video--pref");
     const cred = pref.criador ? ` · ${esc(pref.criador)}` : "";
+    const nome = pref.nome || "QG";
     wrap.innerHTML = `<span class="video__badge">MAPA PREFERIDO — ${esc(pref.nome || "")}${cred}</span>
-      <iframe src="https://www.youtube-nocookie.com/embed/${prefId}"
-        title="Tour do mapa ${esc(pref.nome || "QG")}" loading="lazy" allowfullscreen
-        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
+      <button type="button" class="video__facade" aria-label="Assistir tour do mapa ${esc(nome)}">
+        <img src="https://img.youtube.com/vi/${prefId}/hqdefault.jpg" alt="" loading="lazy" />
+        <span class="video__play" aria-hidden="true">▶</span>
+      </button>`;
+    wrap.querySelector(".video__facade").addEventListener("click", function () {
+      const f = document.createElement("iframe");
+      f.src = `https://www.youtube-nocookie.com/embed/${prefId}?autoplay=1`;
+      f.title = `Tour do mapa ${nome}`;
+      f.allow = "autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture";
+      f.allowFullscreen = true;
+      this.replaceWith(f);
+    });
     videoBox.appendChild(wrap);
     if (pref.local) {
       videoBox.appendChild(el("p", "map-local",
@@ -193,15 +204,25 @@ function render() {
   const roster = document.getElementById("roster-container");
   C.hierarquia.forEach((m) => {
     const card = el("article", "member");
+    const placeholder = `<div class="member__photo member__photo--placeholder"><span>AGUARDANDO FOTO 3:4<br>${esc(m.cargo)}</span></div>`;
     const photo = m.foto
-      ? `<div class="member__photo"><img src="${m.foto}" alt="${esc(m.nome)}" loading="lazy" /></div>`
-      : `<div class="member__photo member__photo--placeholder"><span>AGUARDANDO FOTO 3:4<br>${esc(m.cargo)}</span></div>`;
+      ? `<div class="member__photo"><img src="${esc(m.foto)}" alt="${esc(m.nome)}" loading="lazy" /></div>`
+      : placeholder;
     card.innerHTML = `${photo}
       <h3 class="member__cargo">${esc(m.cargo)}</h3>
       <p class="member__nome">${flag(m.nome)}</p>
       <p class="member__id">${flag(m.id)}</p>
       <p class="member__funcao">${flag(m.funcao)}</p>`;
     roster.appendChild(card);
+    // se a foto não existir, cai pro placeholder (mesmo padrão das outras imagens)
+    if (m.foto) {
+      const img = card.querySelector(".member__photo img");
+      if (img) img.addEventListener("error", () => {
+        const box = img.closest(".member__photo");
+        box.classList.add("member__photo--placeholder");
+        box.innerHTML = `<span>AGUARDANDO FOTO 3:4<br>${esc(m.cargo)}</span>`;
+      });
+    }
   });
 
   // a tropa (soldados)
@@ -348,13 +369,28 @@ function initMotion() {
     });
   });
 
-  // reveal cinematográfico das imagens: wipe de baixo pra cima
-  document.querySelectorAll(".media").forEach((box) => {
-    gsap.from(box, {
-      clipPath: "inset(100% 0 0 0)",
-      duration: 1.0,
-      ease: "power4.out",
-      scrollTrigger: { trigger: box, start: "top 86%", once: true },
+  // reveal das imagens: wipe cinematográfico (clip-path) só no desktop, onde é
+  // barato; no celular usa transform+opacity (composite, sem repaint por frame)
+  const mm = gsap.matchMedia();
+  mm.add("(min-width: 768px)", () => {
+    document.querySelectorAll(".media").forEach((box) => {
+      gsap.from(box, {
+        clipPath: "inset(100% 0 0 0)",
+        duration: 1.0,
+        ease: "power4.out",
+        scrollTrigger: { trigger: box, start: "top 86%", once: true },
+      });
+    });
+  });
+  mm.add("(max-width: 767px)", () => {
+    document.querySelectorAll(".media").forEach((box) => {
+      gsap.from(box, {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        scrollTrigger: { trigger: box, start: "top 88%", once: true },
+      });
     });
   });
 

@@ -115,7 +115,7 @@ const CONTENT = {
       nome: "Barrio Del Este",
       criador: "SOLOTY",
       youtube: "-44tcyjfBlQ",
-      local: "El Burro Heights, leste de Los Santos (in-game 1148, -1448)",
+      local: "El Burro Heights, leste de Los Santos",
     },
 
     alternativas: [
@@ -277,6 +277,6 @@ const CONTENT = {
   /* ─────────── 09 · ASSINATURA ─────────── */
   firmas: [
     { nome: "Amanda Campos", cargo: "EL JEFE" },
-    { nome: "NOME DO PERSONAGEM", cargo: "SEGUNDO" },
+    { nome: "Slim Devereaux", cargo: "SEGUNDO" },
   ],
 };
