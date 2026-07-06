@@ -196,6 +196,25 @@ function render() {
     roster.appendChild(card);
   });
 
+  // a tropa (soldados)
+  const soldados = C.soldados || [];
+  if (soldados.length) {
+    document.getElementById("tropa-sub").innerHTML =
+      `A TROPA <span class="tropa__count">${soldados.length} soldados</span>`;
+    if (C.tropaIntro) {
+      document.getElementById("tropa-intro").appendChild(el("p", null, esc(C.tropaIntro)));
+    }
+    const tropa = document.getElementById("tropa-container");
+    soldados.forEach((s) => {
+      const chip = el("div", "soldado");
+      const idHtml = s.id
+        ? `<span class="soldado__id">${esc(s.id)}</span>`
+        : `<span class="soldado__id soldado__id--pend">#—</span>`;
+      chip.innerHTML = `${idHtml}<span class="soldado__nome">${esc(s.nome)}</span>`;
+      tropa.appendChild(chip);
+    });
+  }
+
   // 06 · conduta
   const internas = document.getElementById("conduta-internas");
   C.conduta.internas.forEach((r) => internas.appendChild(el("li", null, flag(r))));
