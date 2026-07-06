@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# editores
+.vscode/
+.idea/
+
+# node (caso alguém instale ferramentas locais)
+node_modules/

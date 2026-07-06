@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOS AZTECAS — Dossiê Oficial · Cidade dos Anjos</title>
+  <meta name="description" content="Apresentação oficial da facção Los Aztecas para a staff da Cidade dos Anjos." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b0907" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LOS AZTECAS — Dossiê Oficial" />
+  <meta property="og:description" content="Apresentação oficial da facção Los Aztecas para a staff da Cidade dos Anjos." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23FF6A00' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FF6A00'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Pirata+One&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script defer src="js/content.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div class="loader" id="loader">
+    <span class="loader__blackletter">Los</span>
+    <span class="loader__word">AZTECAS</span>
+  </div>
+
+  <!-- grão de filme sobre a página inteira -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═══════════ TOPO FIXO ═══════════ -->
+  <header class="topbar">
+    <span class="topbar__item">DOSSIÊ OFICIAL DE FACÇÃO</span>
+    <span class="topbar__item topbar__item--accent" id="topbar-cidade">CIDADE DOS ANJOS</span>
+    <span class="topbar__item" id="topbar-data">—</span>
+  </header>
+
+  <main>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__sunwrap" aria-hidden="true">
+        <svg class="hero__sun" viewBox="0 0 600 600">
+          <g fill="none" stroke="currentColor">
+            <circle cx="300" cy="300" r="290" stroke-width="1" stroke-dasharray="4 14"/>
+            <circle cx="300" cy="300" r="240" stroke-width="1"/>
+            <circle cx="300" cy="300" r="238" stroke-width="6" stroke-dasharray="2 46"/>
+            <circle cx="300" cy="300" r="180" stroke-width="1" stroke-dasharray="60 18"/>
+            <circle cx="300" cy="300" r="120" stroke-width="1"/>
+            <circle cx="300" cy="300" r="118" stroke-width="10" stroke-dasharray="3 88"/>
+            <circle cx="300" cy="300" r="60" stroke-width="1" stroke-dasharray="10 8"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__kicker anim-fade">APRESENTAÇÃO OFICIAL PARA A STAFF</p>
+        <h1 class="hero__title" aria-label="Los Aztecas">
+          <span class="hero__los" aria-hidden="true">Los</span>
+          <span class="hero__word" id="hero-word" aria-hidden="true">AZTECAS</span>
+        </h1>
+        <div class="hero__foot anim-fade">
+          <p class="hero__tag">SANGUE, BAIRRO E LEALDADE <span class="hero__dot" aria-hidden="true">●</span> <span lang="es">EL BARRIO ES PRIMERO</span></p>
+          <p class="hero__scroll">DESÇA PARA LER O DOSSIÊ <span aria-hidden="true">↓</span></p>
+        </div>
+      </div>
+
+      <div class="greca" aria-hidden="true"></div>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>LOS AZTECAS — CIDADE DOS ANJOS — EL BARRIO ES PRIMERO — </span><span>LOS AZTECAS — CIDADE DOS ANJOS — EL BARRIO ES PRIMERO — </span>
+      </div>
+    </div>
+
+    <!-- ═══════════ ÍNDICE ═══════════ -->
+    <nav class="indice" aria-label="Índice do dossiê">
+      <a href="#historia"><b>01</b> HISTÓRIA</a>
+      <a href="#identidade"><b>02</b> IDENTIDADE</a>
+      <a href="#territorio"><b>03</b> TERRITÓRIO</a>
+      <a href="#qg"><b>04</b> QG</a>
+      <a href="#hierarquia"><b>05</b> HIERARQUIA</a>
+      <a href="#conduta"><b>06</b> CONDUTA</a>
+      <a href="#plano"><b>07</b> PLANO 90 DIAS</a>
+      <a href="#contribuicao"><b>08</b> CONTRIBUIÇÃO</a>
+      <a href="#assinatura"><b>09</b> ASSINATURA</a>
+    </nav>
+
+    <!-- ═══════════ 01 · HISTÓRIA ═══════════ -->
+    <section class="section" id="historia">
+      <div class="section__head">
+        <span class="section__num">01</span>
+        <h2 class="section__title">HISTÓRIA <em class="bl" lang="es">y</em> ORIGEM</h2>
+      </div>
+      <div class="section__body prose" id="lore-container"></div>
+    </section>
+
+    <!-- ═══════════ 02 · IDENTIDADE ═══════════ -->
+    <section class="section" id="identidade">
+      <div class="section__head">
+        <span class="section__num">02</span>
+        <h2 class="section__title">IDENTIDADE <em class="bl" lang="es">del</em> BARRIO</h2>
+      </div>
+      <div class="paleta" id="paleta-container"></div>
+      <div class="cards" id="identidade-container"></div>
+    </section>
+
+    <!-- ═══════════ 03 · TERRITÓRIO ═══════════ -->
+    <section class="section" id="territorio">
+      <div class="section__head">
+        <span class="section__num">03</span>
+        <h2 class="section__title">TERRITÓRIO <em class="bl" lang="es">y</em> ATUAÇÃO</h2>
+      </div>
+      <div class="section__body prose" id="territorio-desc"></div>
+      <div class="media-grid" id="territorio-imgs"></div>
+      <div class="vertentes" id="vertentes-container"></div>
+      <div class="postura" id="postura-container"></div>
+    </section>
+
+    <!-- ═══════════ 04 · QG ═══════════ -->
+    <section class="section" id="qg">
+      <div class="section__head">
+        <span class="section__num">04</span>
+        <h2 class="section__title">EL CUARTEL <em class="bl" lang="es">—</em> NOSSO QG</h2>
+      </div>
+      <div class="section__body prose" id="qg-desc"></div>
+      <div id="qg-video"></div>
+      <div class="cards" id="qg-detalhes"></div>
+      <h3 class="qg-galeria__sub" id="qg-galeria-sub" hidden>O BARRIO POR DENTRO</h3>
+      <div class="media-grid" id="qg-galeria"></div>
+    </section>
+
+    <!-- ═══════════ 05 · HIERARQUIA ═══════════ -->
+    <section class="section" id="hierarquia">
+      <div class="section__head">
+        <span class="section__num">05</span>
+        <h2 class="section__title">HIERARQUIA <em class="bl" lang="es">de la</em> FAMILIA</h2>
+      </div>
+      <div class="roster" id="roster-container"></div>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <div class="marquee marquee--reverse" aria-hidden="true">
+      <div class="marquee__track">
+        <span>RESPEITO — LEALDADE — SILÊNCIO — FAIR PLAY — </span><span>RESPEITO — LEALDADE — SILÊNCIO — FAIR PLAY — </span>
+      </div>
+    </div>
+
+    <!-- ═══════════ 06 · CÓDIGO DE CONDUTA ═══════════ -->
+    <section class="section" id="conduta">
+      <div class="section__head">
+        <span class="section__num">06</span>
+        <h2 class="section__title">CÓDIGO <em class="bl" lang="es">de</em> CONDUTA</h2>
+      </div>
+      <div class="conduta">
+        <div class="conduta__col">
+          <h3 class="conduta__sub">LEI INTERNA (NO PERSONAGEM)</h3>
+          <ol class="conduta__list" role="list" id="conduta-internas"></ol>
+        </div>
+        <div class="conduta__col conduta__col--city">
+          <h3 class="conduta__sub">COMPROMISSO COM A CIDADE</h3>
+          <ol class="conduta__list" role="list" id="conduta-servidor"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 07 · PLANO 90 DIAS ═══════════ -->
+    <section class="section" id="plano">
+      <div class="section__head">
+        <span class="section__num">07</span>
+        <h2 class="section__title">PLANO <em class="bl" lang="es">de los</em> 90 DIAS</h2>
+      </div>
+      <div class="fases" id="plano-container"></div>
+    </section>
+
+    <!-- ═══════════ 08 · O QUE AGREGAMOS ═══════════ -->
+    <section class="section" id="contribuicao">
+      <div class="section__head">
+        <span class="section__num">08</span>
+        <h2 class="section__title">O QUE LEVAMOS <em class="bl" lang="es">para la</em> CIUDAD</h2>
+      </div>
+      <p class="lead-callout" id="contribuicao-lead"></p>
+      <div class="cards cards--wide" id="contribuicao-container"></div>
+    </section>
+
+    <!-- ═══════════ 09 · ASSINATURA ═══════════ -->
+    <section class="section section--final" id="assinatura">
+      <div class="greca greca--top" aria-hidden="true"></div>
+      <p class="final__kicker">ESTE DOSSIÊ SEGUE PARA AVALIAÇÃO DA STAFF</p>
+      <h2 class="final__title"><span class="bl bl--big" lang="es">Firmado por</span></h2>
+      <div class="firmas" id="firmas-container"></div>
+      <div class="stamp" id="stamp">
+        <span>AGUARDANDO<br>APROVAÇÃO<br>DA STAFF</span>
+      </div>
+      <footer class="final__footer">
+        <span>LOS AZTECAS</span>
+        <span id="footer-cidade">CIDADE DOS ANJOS</span>
+        <span id="footer-data">—</span>
+      </footer>
+    </section>
+
+  </main>
+
+</body>
+</html>
