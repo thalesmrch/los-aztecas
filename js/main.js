@@ -12,6 +12,33 @@ function el(tag, className, html) {
   return node;
 }
 
+// marquee sem emenda: repete o texto até passar da largura da tela e clona o
+// grupo, com duração proporcional pra manter velocidade constante em qualquer tela
+function buildMarquee(container, text) {
+  if (!container || !text) return;
+  const track = el("div", "marquee__track");
+  const group = el("span", "marquee__group");
+  group.textContent = text;
+  track.appendChild(group);
+  container.innerHTML = "";
+  container.appendChild(track);
+  let guard = 0;
+  while (group.offsetWidth < window.innerWidth * 1.15 && guard < 40) {
+    group.textContent += text;
+    guard++;
+  }
+  const clone = group.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  track.appendChild(clone);
+  track.style.animationDuration = Math.max(14, group.offsetWidth / 70) + "s";
+}
+
+function buildMarquees() {
+  const m = CONTENT.marquees || [];
+  buildMarquee(document.getElementById("marquee-1"), m[0]);
+  buildMarquee(document.getElementById("marquee-2"), m[1]);
+}
+
 function esc(str) {
   const d = document.createElement("div");
   d.textContent = str;
@@ -444,6 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reveal = () => {
     if (revealed) return;
     revealed = true;
+    try { buildMarquees(); } catch (e) { console.warn("marquee:", e); }
     let intro = null;
     try {
       intro = initMotion();
@@ -465,4 +493,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(reveal, 400);
   }
   setTimeout(reveal, 4000); // cinto de segurança absoluto
+
+  // rebuild dos marquees quando as fontes reais chegam (medida correta) e ao redimensionar
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => { try { buildMarquees(); } catch (e) {} });
+  }
+  let rzTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(rzTimer);
+    rzTimer = setTimeout(() => { try { buildMarquees(); } catch (e) {} }, 200);
+  });
 });

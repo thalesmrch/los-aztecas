@@ -17,6 +17,13 @@ const CONTENT = {
     data: "JULHO · 2026",
   },
 
+  // faixas em movimento (decorativas). O texto se repete sozinho pra preencher
+  // a tela sem buracos; o "◆" separa as palavras.
+  marquees: [
+    "LOS AZTECAS ◆ EL BARRIO ES PRIMERO ◆ CIDADE DOS ANJOS ◆ ",
+    "SANGUE ◆ FAMILIA ◆ BARRIO ◆ LEALDADE ◆ RESPEITO ◆ ",
+  ],
+
   /* ─────────── 01 · HISTÓRIA / LORE ─────────── */
   lore: [
     "A primeira geração dos Aztecas cresceu num bairro mexicano onde a herança de família era o sobrenome e mais nada. Quem atravessou a fronteira trouxe pouco: orgulho, o retrato da avó e a certeza de que família é quem divide o asfalto com você, não quem tem o mesmo sangue.",
