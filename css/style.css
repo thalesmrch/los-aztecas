@@ -521,6 +521,14 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
   gap: 1.4rem;
 }
+/* comando = liderança (Jefe + Segundo): 2 cards balanceados, sem esticar */
+.roster--comando {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 360px));
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  justify-content: start;
+}
+.tier-sub { margin-top: 0; }
+.tier-sub + .roster { margin-top: 1.4rem; }
 .member { position: relative; }
 .member__photo {
   position: relative;
@@ -746,6 +754,11 @@ body {
 .indice a b { color: var(--orange); font-weight: 700; margin-right: 0.35em; }
 .indice a:hover, .indice a:focus-visible { color: var(--ink); }
 .indice a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+/* alvos de toque confortáveis no celular (>= ~44px) */
+@media (max-width: 640px) {
+  .indice { gap: 0.2rem 1rem; padding: 0.8rem var(--pad); }
+  .indice a { padding: 0.75rem 0.4rem; }
+}
 
 /* ─────────── VÍDEO (QG) ─────────── */
 .video {

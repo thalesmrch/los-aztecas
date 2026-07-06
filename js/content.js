@@ -171,14 +171,7 @@ const CONTENT = {
       funcao: "Braço direito. Assume quando o Jefe não está e toca a operação do dia a dia.",
       nome: "Slim Devereaux",
       id: "ID 2983",
-      foto: null,
-    },
-    {
-      cargo: "VETERANO",
-      funcao: "Conselho da familia. Treina novato, guarda o código e resolve briga interna antes que vire problema.",
-      nome: "NOME DO PERSONAGEM",
-      id: "ID 000",
-      foto: null,
+      foto: "assets/img/slim-segundo.jpg",
     },
   ],
 
