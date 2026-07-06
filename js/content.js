@@ -164,7 +164,7 @@ const CONTENT = {
       funcao: "Palavra final da familia. É quem responde pela facção diante da staff e das outras organizações.",
       nome: "Amanda Campos",
       id: "ID 535",
-      foto: null,
+      foto: "assets/img/amanda-jefe.jpg",
     },
     {
       cargo: "SEGUNDO",
