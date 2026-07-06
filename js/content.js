@@ -207,6 +207,7 @@ const CONTENT = {
     { nome: "David Marconi", id: "#2436" },
     { nome: "Herrera Macallan", id: "#2520" },
     { nome: "Coud Zion", id: "#2564" },
+    { nome: "Slim Devereaux", id: "#2983" },
     { nome: "Alissa Garcez", id: "#3136" },
     { nome: "Jhon Garcez", id: "" },
     { nome: "Guilherme Wonderx", id: "" },
