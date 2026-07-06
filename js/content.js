@@ -197,6 +197,7 @@ const CONTENT = {
     { nome: "Cirilu Deluca", id: "#669" },
     { nome: "Barbara Sativa", id: "#727" },
     { nome: "Cleber Aditto", id: "#749" },
+    { nome: "Nikaia Galanis", id: "#793" },
     { nome: "Akin Follen", id: "#1089" },
     { nome: "Gabriel Aditto", id: "#1136" },
     { nome: "Alerrandro Ryouhei", id: "#1138" },
