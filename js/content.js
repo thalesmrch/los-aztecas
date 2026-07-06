@@ -115,15 +115,16 @@ const CONTENT = {
       nome: "Barrio Del Este",
       criador: "SOLOTY",
       youtube: "-44tcyjfBlQ",
+      local: "El Burro Heights, leste de Los Santos (in-game 1148, -1448)",
     },
 
     alternativas: [
-      { nome: "Florence District", criador: "SOLOTY", youtube: "_AUiJP_XYSI" },
-      { nome: "Bighorn Gardens", criador: "", youtube: "XjlzZJG-bW4" },
-      { nome: "Amalia Street — East L.A.", criador: "", youtube: "K64TtXDrpP0" },
-      { nome: "Mirror Palms District", criador: "", youtube: "gQ03K8Uhcuw" },
-      { nome: "San Fernando Gardens", criador: "", youtube: "pye4zLmSqmg" },
-      { nome: "South LA Extension", criador: "", youtube: "ArLWADq-tyg" },
+      { nome: "Florence District", criador: "SOLOTY", youtube: "_AUiJP_XYSI", local: "Rancho (norte), sudeste de Los Santos" },
+      { nome: "Bighorn Gardens", criador: "", youtube: "XjlzZJG-bW4", local: "Rancho, sudeste de Los Santos" },
+      { nome: "Amalia Street — East L.A.", criador: "", youtube: "K64TtXDrpP0", local: "Rancho / leste de Los Santos" },
+      { nome: "Mirror Palms District", criador: "", youtube: "gQ03K8Uhcuw", local: "Mirror Park, leste de Los Santos" },
+      { nome: "San Fernando Gardens", criador: "", youtube: "pye4zLmSqmg", local: "South Los Santos" },
+      { nome: "South LA Extension", criador: "", youtube: "ArLWADq-tyg", local: "Davis / Grove Street, sul de Los Santos" },
     ],
 
     detalhes: [

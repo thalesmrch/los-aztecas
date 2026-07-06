@@ -845,11 +845,47 @@ body {
 .map-alt:hover .map-alt__play { background: rgba(255, 106, 0, 0.28); }
 .map-alt__name {
   display: block;
-  padding: 0.7rem 0.9rem;
+  padding: 0.7rem 0.9rem 0.2rem;
   font-family: var(--font-cond);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.1em;
+}
+.map-alt__local {
+  display: block;
+  padding: 0 0.9rem 0.75rem;
+  font-family: var(--font-cond);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+.map-alt__local::before {
+  content: "▸ ";
+  color: var(--orange);
+}
+
+/* localização do mapa preferido */
+.map-local {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: -0.6rem 0 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--orange);
+  background: var(--bg-2);
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.map-local span {
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--orange);
 }
 
 /* ─────────── PLANO 90 DIAS ─────────── */

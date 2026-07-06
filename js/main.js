@@ -141,6 +141,10 @@ function render() {
         title="Tour do mapa ${esc(pref.nome || "QG")}" loading="lazy" allowfullscreen
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
     videoBox.appendChild(wrap);
+    if (pref.local) {
+      videoBox.appendChild(el("p", "map-local",
+        `<span>ONDE FICA NO GTA</span>${esc(pref.local)}`));
+    }
   } else {
     const ph = el("div", "video video--placeholder");
     ph.appendChild(el("span", "media__label",
@@ -160,11 +164,15 @@ function render() {
       card.href = `https://www.youtube.com/watch?v=${id}`;
       card.target = "_blank";
       card.rel = "noopener";
+      const localHtml = a.local
+        ? `<span class="map-alt__local">${esc(a.local)}</span>`
+        : "";
       card.innerHTML = `<span class="map-alt__thumb">
           <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" />
           <span class="map-alt__play" aria-hidden="true">▶</span>
         </span>
-        <span class="map-alt__name">${esc(a.nome || "")}${cred}</span>`;
+        <span class="map-alt__name">${esc(a.nome || "")}${cred}</span>
+        ${localHtml}`;
       grid.appendChild(card);
     });
     videoBox.appendChild(grid);
