@@ -44,21 +44,14 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: var(--orange-deep); }
 
 /* ─────────── GRÃO DE FILME ─────────── */
+/* grão estático — textura sem custo de repaint por frame */
 .grain {
   position: fixed;
-  inset: -12%;
+  inset: 0;
   z-index: 90;
   pointer-events: none;
-  opacity: 0.5;
-  will-change: transform;
+  opacity: 0.45;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.10'/%3E%3C/svg%3E");
-  animation: grain-shift 1.2s steps(3) infinite;
-}
-@keyframes grain-shift {
-  0% { transform: translate(0, 0); }
-  33% { transform: translate(-4%, 5%); }
-  66% { transform: translate(5%, -4%); }
-  100% { transform: translate(0, 0); }
 }
 
 /* ─────────── PRELOADER ─────────── */
@@ -71,9 +64,10 @@ body {
   justify-content: center;
   gap: 0.35em;
   background: var(--bg);
-  transition: opacity 0.6s ease, visibility 0.6s;
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
 }
-.loader.is-done { opacity: 0; visibility: hidden; }
+.loader.is-done { transform: translateY(-101%); }
 .loader__blackletter {
   font-family: var(--font-bl);
   font-size: clamp(2rem, 6vw, 4rem);
@@ -128,9 +122,22 @@ body {
     radial-gradient(ellipse 70% 50% at 50% -10%, rgba(255, 106, 0, 0.07), transparent 60%),
     var(--bg);
 }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(11, 9, 7, 0.88) 0%, rgba(11, 9, 7, 0.66) 45%, rgba(11, 9, 7, 0.98) 100%),
+    radial-gradient(ellipse 80% 58% at 50% 46%, rgba(11, 9, 7, 0.58) 0%, rgba(11, 9, 7, 0) 72%),
+    radial-gradient(ellipse 100% 70% at 50% 118%, rgba(194, 65, 12, 0.32), transparent 60%),
+    url("../assets/img/barrio-aerea.jpg") center 30% / cover no-repeat;
+  filter: saturate(0.85) contrast(1.05);
+}
 .hero__sunwrap {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   will-change: transform;
 }

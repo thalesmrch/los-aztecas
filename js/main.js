@@ -264,8 +264,9 @@ function initMotion() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // smooth scroll (Lenis)
-  const lenis = new Lenis({ lerp: 0.09 });
+  // smooth scroll (Lenis) — snappy o suficiente pra não sentir "arrasto",
+  // e nativo no toque (celular não usa smooth-scroll sintético)
+  const lenis = new Lenis({ lerp: 0.11, wheelMultiplier: 1, smoothWheel: true, syncTouch: false });
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((time) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -339,7 +340,17 @@ function initMotion() {
     });
   });
 
-  // imagens com parallax interno
+  // reveal cinematográfico das imagens: wipe de baixo pra cima
+  document.querySelectorAll(".media").forEach((box) => {
+    gsap.from(box, {
+      clipPath: "inset(100% 0 0 0)",
+      duration: 1.0,
+      ease: "power4.out",
+      scrollTrigger: { trigger: box, start: "top 86%", once: true },
+    });
+  });
+
+  // parallax interno das imagens (só nas fotos reais, não nos placeholders)
   document.querySelectorAll(".media img").forEach((img) => {
     gsap.to(img, {
       yPercent: -12,

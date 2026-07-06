@@ -109,7 +109,7 @@ const CONTENT = {
      youtube: aceita link completo ou só o ID (ex.: "-44tcyjfBlQ"). */
   qg: {
     descricao:
-      "Nosso território e QG é um barrio a céu aberto de East Los: pátio com piscina, quadra, muro grafitado e lowrider estacionado na rua. É onde a familia vive, se reúne e recebe a cidade. Abaixo está o mapa que a gente prefere, e três alternativas caso a staff prefira outro.",
+      "O mapa que a gente quer pra esse barrio é o Barrio Del Este, do SOLOTY. É ele que vira a casa da familia — o pátio, a quadra e a rua onde tudo acontece. Abaixo, o tour dele em destaque, e três alternativas caso a staff prefira outro.",
 
     mapaPreferido: {
       nome: "Barrio Del Este",
