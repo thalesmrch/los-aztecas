@@ -121,6 +121,9 @@ const CONTENT = {
       { nome: "Florence District", criador: "SOLOTY", youtube: "_AUiJP_XYSI" },
       { nome: "Bighorn Gardens", criador: "", youtube: "XjlzZJG-bW4" },
       { nome: "Amalia Street — East L.A.", criador: "", youtube: "K64TtXDrpP0" },
+      { nome: "Mirror Palms District", criador: "", youtube: "gQ03K8Uhcuw" },
+      { nome: "San Fernando Gardens", criador: "", youtube: "pye4zLmSqmg" },
+      { nome: "South LA Extension", criador: "", youtube: "ArLWADq-tyg" },
     ],
 
     detalhes: [
